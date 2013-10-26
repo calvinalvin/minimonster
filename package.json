@@ -1,0 +1,50 @@
+{
+  "name": "minimonster",
+  "description": "Nodejs minification middleware for express/connnect with in memory caching support",
+  "version": "0.1.0",
+  "author": {
+    "name": "Calvin Alvin",
+    "email": "calvin@etwist.com",
+    "url": "http://www.github.com/calvinalvin"
+  },
+  "main": "./index",
+  "directories": {
+    "lib": "./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/calvinalvin/minimonster"
+  },
+  "engines": {
+    "node": ">=0.6.x"
+  },
+  "dependencies": {
+    "node-minify": "0.8.1",
+    "node-cache": "0.4.0",
+    "colors": "0.6.x"
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "compressor",
+    "minify",
+    "minifier",
+    "minification",
+    "yui",
+    "gcc",
+    "google",
+    "closure",
+    "compiler",
+    "uglify",
+    "uglifyjs",
+    "uglifyjs2",
+    "windows",
+    "sqwish",
+    "cache",
+    "caching"
+  ],
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/calvinalvin/minimonster/issues"
+  }
+}
