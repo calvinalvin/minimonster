@@ -53,3 +53,17 @@ Time to live in milliseconds of in memory cache objects before eviction
 - ##### cacheDirectoryName ```string``` defaults to "_mm"
 Name of the directory that cached versions of the minified files are saved into. This is not to be confused with the in memory cache. Once a file has been minified, it will be stored into this directory so that minification does not need to happen again. As minification is a relatively CPU intensive process, we do not want to minify something we've already minified.
 
+- ##### cacheExtension ```string``` defaults to ".mini"
+This gets appended to the name of minified files. For instance if you have a file called ```application.js``` the new minified file will be called ```application.mini.js```
+
+- ##### debugMode ```boolean``` defaults to false
+Gives verbose output to console if set to true
+
+- ##### cssCompressor ```string``` defaults to "yui-css"
+The compression engine for css files. Options are "yui-css", "sqwish"
+
+- ##### jsCompressor ```string``` defaults to "uglifyjs"
+The compression engine for js files. Options are "gcc" (google closure compiler), "yui-js", "uglifyjs"
+
+- ##### maxAge ```number``` defaults to 1 day
+The maxAge of the http Cache-Control header for static files in milliseconds. [Cache Control Header](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)
