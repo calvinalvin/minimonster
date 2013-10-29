@@ -66,4 +66,4 @@ The compression engine for css files. Options are "yui-css", "sqwish"
 The compression engine for js files. Options are "gcc" (google closure compiler), "yui-js", "uglifyjs"
 
 - ##### maxAge ```number``` defaults to 1 day
-The maxAge of the http Cache-Control header for static files in milliseconds. [Cache Control Header](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)
+The maxAge of the [http Cache-Control headers](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) for static files in milliseconds. 
