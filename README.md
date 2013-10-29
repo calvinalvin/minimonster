@@ -12,6 +12,8 @@ Nodejs css/js minification middleware for connect/express with in-memory caching
 - module could be used as an object outside of middleware (express/connect) environment
 
 
+========
+
 ### Usage
 
 You can just drop minimonster into your express middleware stack. The minimum you need is the ```src``` options, which is the directory path to the directory containing all your public css and js files.
@@ -21,7 +23,23 @@ app.use(minimonster.minify({
     src: __dirname + '/public'
 }));
 ```
+### Important
 
+If you are using minimonster as middleware in an express/connect app. Make sure that minimonster is above the ```express.static()``` middleware 
+
+example:
+
+```javascript
+app.use(express.compress());
+
+// minimonster is above express.static in the middleware stack
+app.use(minimonster.minify({ 
+    src: __dirname + '/public'
+}));
+
+app.use(express.static(app.root + '/public', { maxAge: 86400000 }));
+
+```
 
 ### Usage with more options
 
@@ -38,6 +56,8 @@ app.use(minimonster.minify({
     maxAge: 86400000 // default to 1 day
 }));
 ```
+
+======
 
 ### Description of options
 
