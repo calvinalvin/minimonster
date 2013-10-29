@@ -37,7 +37,7 @@ app.use(minimonster.minify({
     src: __dirname + '/public'
 }));
 
-app.use(express.static(app.root + '/public', { maxAge: 86400000 }));
+app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
 
 ```
 
