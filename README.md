@@ -47,4 +47,9 @@ This is the path to the public directory containing all your css and js files. T
 - ##### useInMemoryCache ```boolean``` defaults to true
 Flag telling minimonster to store results in memory cache or not. If this is set to true then minimonster will agressively cache all minified content into it's in-memory cache so that it minimizes physical disk access. This is recommended for high performance production environments.
 
+- ##### inMemoryCacheTTL ```number``` defaults to 10800
+Time to live in milliseconds of in memory cache objects before eviction
+
+- ##### cacheDirectoryName ```string``` defaults to "_mm"
+Name of the directory that cached versions of the minified files are saved into. This is not to be confused with the in memory cache. Once a file has been minified, it will be stored into this directory so that minification does not need to happen again. As minification is a relatively CPU intensive process, we do not want to minify something we've already minified.
 
