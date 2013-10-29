@@ -18,7 +18,7 @@ You can just drop minimonster into your express middleware stack. The minimum yo
 
 ```javascript
 app.use(minimonster.minify({ 
-        src: __dirname + '/public'
+    src: __dirname + '/public'
 }));
 ```
 
@@ -27,15 +27,15 @@ app.use(minimonster.minify({
 
 ```javascript
 app.use(minimonster.minify({ 
-        src: __dirname + '/public', // required
-        useInMemoryCache: true, // defaults to true
-        inMemoryCacheTTL: 10800, // defaults to 3 hours
-        cacheDirectoryName:  "_mm", // defaults to "_mm"
-        cacheExtension: ".mini", // defaults to ".mini"
-        debugMode: false, // defaults to false
-        cssCompressor: 'yui-css', // defaults to "yui-css"
-        jsCompressor:  'uglifyjs', // defaults to "uglifyjs"
-        maxAge: 86400000 // default to 1 day
+    src: __dirname + '/public', // required
+    useInMemoryCache: true, // defaults to true
+    inMemoryCacheTTL: 10800, // defaults to 3 hours
+    cacheDirectoryName:  "_mm", // defaults to "_mm"
+    cacheExtension: ".mini", // defaults to ".mini"
+    debugMode: false, // defaults to false
+    cssCompressor: 'yui-css', // defaults to "yui-css"
+    jsCompressor:  'uglifyjs', // defaults to "uglifyjs"
+    maxAge: 86400000 // default to 1 day
 }));
 ```
 
