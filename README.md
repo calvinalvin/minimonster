@@ -21,3 +21,22 @@ app.use(minimonster.minify({
 }));
 ```
 
+
+### Usage with more options
+
+```javascript
+app.use(minimonster.minify({ 
+        src: __dirname + '/public', // required
+        useInMemoryCache: true, // defaults to true
+        inMemoryCacheTTL: 10800, // defaults to 3 hours
+        cacheDirectoryName:  "_mm", // defaults to "_mm"
+        cacheExtension: ".mini", // defaults to ".mini"
+        debugMode: false, // defaults to false
+        cssCompressor: 'yui-css', // defaults to "yui-css"
+        jsCompressor:  'uglifyjs', // defaults to "uglifyjs"
+        maxAge: 86400000 // default to 1 day
+}));
+```
+
+### Description of options
+
