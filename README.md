@@ -9,6 +9,7 @@ Nodejs css/js minification middleware for connect/express with in-memory caching
 - switch between different minification frameworks out there (google closure, yui, uglify, swish)
 - add in memory support so minified css and js could be served from memory instead of hitting the disk every time
 - graceful degredation on any type of failure
+- module could be used as an object outside of middleware (express/connect) environment
 
 
 ### Usage
@@ -39,4 +40,7 @@ app.use(minimonster.minify({
 ```
 
 ### Description of options
+
+#### src ```string```
+This is the path to the public directory containing all your css and js files. This is the folder minimonster will look into to compress and serve files from.
 
