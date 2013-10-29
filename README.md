@@ -41,10 +41,10 @@ app.use(minimonster.minify({
 
 ### Description of options
 
-##### src ```string``` required
+- ##### src ```string``` required
 This is the path to the public directory containing all your css and js files. This is the folder minimonster will look into to compress and serve files from.
 
-##### useInMemoryCache ```boolean``` defaults to true
+- ##### useInMemoryCache ```boolean``` defaults to true
 Flag telling minimonster to store results in memory cache or not. If this is set to true then minimonster will agressively cache all minified content into it's in-memory cache so that it minimizes physical disk access. This is recommended for high performance production environments.
 
 
