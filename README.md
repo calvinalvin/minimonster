@@ -32,7 +32,7 @@ example:
 ```javascript
 app.use(express.compress());
 
-// minimonster is above express.static in the middleware stack
+// minimonster needs to comes before express.static in the middleware stack or it will never work!!!
 app.use(minimonster.minify({ 
     src: __dirname + '/public'
 }));
