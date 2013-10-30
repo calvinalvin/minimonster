@@ -15,7 +15,7 @@ Nodejs css/js minification middleware for connect/express with in-memory caching
 
 ========
 
-### Usage
+### Using minimonster as middleware
 
 You can just drop minimonster into your express middleware stack. The minimum you need is the ```src``` option, which is the path to the directory containing all your public css and js files.
 
