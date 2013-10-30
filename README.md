@@ -40,6 +40,7 @@ app.use(minimonster.minify({
     src: __dirname + '/public'
 }));
 
+// express.static will service as a fallback in case minimonster cannot serve the request for whatever reason
 app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
 
 ```
