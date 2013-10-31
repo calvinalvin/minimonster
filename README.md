@@ -139,3 +139,11 @@ java -version
 ```
 
 
+=======
+
+### In Memory Cache
+
+The in-memory cache is backed by [node-cache](https://github.com/tcs-de/nodecache) by [tcs-de](https://github.com/tcs-de)
+
+The inMemoryCacheTTL option can control the TTL of in memory cache objects. The cache eviction cycle is run every 120 seconds.
+
