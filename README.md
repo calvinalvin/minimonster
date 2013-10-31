@@ -8,7 +8,7 @@ Nodejs css/js minification middleware for connect/express with in-memory caching
 
 - minify BOTH css and js files
 - switch between different minification frameworks out there (google closure, yui, uglify, swish)
-- add in memory support so minified css and js could be served from memory instead of hitting the disk every time
+- add in memory support so minified css and js could be served from memory instead of hitting the disk every time (recommended for high performance production environments)
 - graceful degredation on any type of failure and let express.static() serve as a fallback
 - module could be used as an object outside of middleware (express/connect) environment
 
