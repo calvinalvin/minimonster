@@ -90,4 +90,52 @@ The compression engine for css files. Options are "yui-css", "sqwish"
 The compression engine for js files. Options are "gcc" (google closure compiler), "yui-js", "uglifyjs"
 
 - ##### maxAge ```number``` defaults to ```86400000```
-The maxAge of the [http Cache-Control headers](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) for static files in milliseconds. 
+The maxAge of the [http Cache-Control headers](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) for static files in milliseconds.
+
+
+=====
+
+### Compressors
+
+The compression is done with the [node-minify](https://github.com/srod/node-minify) module by [srod](https://github.com/srod).
+
+As of node-minify v0.8.1 it supports the following compression schemes:
+
+
+- #### YUI Compressor
+
+  Yahoo Compressor can compress both JavaScript and CSS files.
+
+  http://developer.yahoo.com/yui/compressor/
+
+- #### Google Closure Compiler
+
+  Google Closure Compiler can compress only JavaScript files.
+
+  It will throw an error if you try with CSS files.
+
+  http://code.google.com/closure/compiler
+
+- #### UglifyJS
+
+  UglifyJS can compress only JavaScript files.
+
+  It will throw an error if you try with CSS files.
+
+  https://github.com/mishoo/UglifyJS
+
+- #### Sqwish
+
+  Sqwish can compress only CSS files.
+
+  https://github.com/ded/sqwish
+
+- #### Warning
+
+  It assumes you have Java installed on your environment for both GCC and YUI Compressor. To check, run:
+
+```bash
+java -version
+```
+
+
