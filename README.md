@@ -147,3 +147,10 @@ The in-memory cache is backed by [node-cache](https://github.com/tcs-de/nodecach
 
 The ```inMemoryCacheTTL``` option can be used to control the TTL of in memory cache objects. The cache eviction cycle is run every 120 seconds.
 
+======
+
+### Tips
+
+- If you are having any javascript or css weirdness, then try changing the compression engines. Some are more forgiving than others.
+- If you are using the in-memory cache, then be sure to keep that in mind. I recommend setting in-memory cache to false in development environments where you are constantly updating your javascript and css files.
+
