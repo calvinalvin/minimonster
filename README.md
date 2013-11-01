@@ -1,4 +1,4 @@
-minimonster
+![](https://s3.amazonaws.com/ksr/avatars/1968668/domo-kun.small.jpg?1336585346)  minimonster
 ===========
 
 Nodejs css/js minification middleware for connect/express with in-memory caching support
@@ -8,14 +8,14 @@ Nodejs css/js minification middleware for connect/express with in-memory caching
 
 - minify BOTH css and js files
 - switch between different minification frameworks out there (google closure, yui, uglify, swish)
-- add in memory support so minified css and js could be served from memory instead of hitting the disk every time
-- graceful degredation on any type of failure
+- add in memory support so minified css and js could be served from memory instead of hitting the disk every time (recommended for high performance production environments)
+- graceful degredation on any type of failure and let express.static() serve as a fallback
 - module could be used as an object outside of middleware (express/connect) environment
 
 
 ========
 
-### Usage
+### Using minimonster as middleware
 
 You can just drop minimonster into your express middleware stack. The minimum you need is the ```src``` option, which is the path to the directory containing all your public css and js files.
 
@@ -40,6 +40,7 @@ app.use(minimonster.minify({
     src: __dirname + '/public'
 }));
 
+// express.static will service as a fallback in case minimonster cannot serve the request for whatever reason
 app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
 
 ```
@@ -89,6 +90,7 @@ The compression engine for css files. Options are "yui-css", "sqwish"
 The compression engine for js files. Options are "gcc" (google closure compiler), "yui-js", "uglifyjs"
 
 - ##### maxAge ```number``` defaults to ```86400000```
+<<<<<<< HEAD
 The maxAge of the [http Cache-Control headers](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) for static files in milliseconds. 
 
 
@@ -115,3 +117,69 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+=======
+The maxAge of the [http Cache-Control headers](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) for static files in milliseconds.
+
+
+=====
+
+### Compressors
+
+The compression is done with the [node-minify](https://github.com/srod/node-minify) module by [srod](https://github.com/srod).
+
+As of node-minify v0.8.1 it supports the following compression schemes:
+
+
+- #### YUI Compressor
+
+  Yahoo Compressor can compress both JavaScript and CSS files.
+
+  http://developer.yahoo.com/yui/compressor/
+
+- #### Google Closure Compiler
+
+  Google Closure Compiler can compress only JavaScript files.
+
+  It will throw an error if you try with CSS files.
+
+  http://code.google.com/closure/compiler
+
+- #### UglifyJS
+
+  UglifyJS can compress only JavaScript files.
+
+  It will throw an error if you try with CSS files.
+
+  https://github.com/mishoo/UglifyJS
+
+- #### Sqwish
+
+  Sqwish can compress only CSS files.
+
+  https://github.com/ded/sqwish
+
+- #### Warning
+
+  It assumes you have Java installed on your environment for both GCC and YUI Compressor. To check, run:
+
+```bash
+java -version
+```
+
+
+=======
+
+### In Memory Cache
+
+The in-memory cache is backed by [node-cache](https://github.com/tcs-de/nodecache) by [tcs-de](https://github.com/tcs-de)
+
+The ```inMemoryCacheTTL``` option can be used to control the TTL of in memory cache objects. The cache eviction cycle is run every 120 seconds.
+
+======
+
+### Tips
+
+- If you are having any javascript or css weirdness, then try changing the compression engines. Some are more forgiving than others.
+- If you are using the in-memory cache, then be sure to keep that in mind. I recommend setting in-memory cache to false in development environments where you are constantly updating your javascript and css files.
+- Stopping and restarting your app will destory all in-memory cache values.
+>>>>>>> 667a41f49f1da219b27d984883d512d92b89be30
