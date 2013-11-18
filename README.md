@@ -14,6 +14,11 @@ Nodejs css/js minification middleware for connect/express with in-memory caching
 
 
 ========
+### Pull requests welcome!
+
+If you find any bugs, please help me fix them! Thanks.
+
+========
 
 ### Using minimonster as middleware
 
