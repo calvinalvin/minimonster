@@ -14,6 +14,13 @@ Nodejs css/js minification middleware for connect/express with in-memory caching
 
 
 ========
+### Installation
+
+```bash
+npm install node-transloadit
+```
+
+========
 ### Pull requests welcome!
 
 If you find any bugs, please help me fix them! Thanks.
