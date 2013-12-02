@@ -17,7 +17,7 @@ Nodejs css/js minification middleware for connect/express with in-memory caching
 ### Installation
 
 ```bash
-npm install node-transloadit
+npm install minimonster
 ```
 
 ========
