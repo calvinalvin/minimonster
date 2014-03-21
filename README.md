@@ -163,7 +163,10 @@ The ```inMemoryCacheTTL``` option can be used to control the TTL of in memory ca
 
 ### Tips
 
+- Minimonster does a check against the last-modified timestamp on a file before compression, so if a cached version is out of date, then it will automatically re-cache a copy of the file - this should not be confused with the in-memory-cached copy, which must expire before minimonster will stop serving it.
+
 - If the compressors are having issues minifying your javascript or css files (throwing errors), then try changing the compression engines. Some are more forgiving than others.
+
 - If you are using the in-memory cache, then be sure to keep that in mind. I recommend setting in-memory cache to false in development environments where you are constantly updating your javascript and css files.
 - Stopping and restarting your app will destory all in-memory cache values.
 
