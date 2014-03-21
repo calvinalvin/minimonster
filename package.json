@@ -1,7 +1,7 @@
 {
   "name": "minimonster",
   "description": "Nodejs minification middleware for express/connnect with in memory caching support",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": {
     "name": "Calvin Alvin",
     "email": "calvin@etwist.com",
