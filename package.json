@@ -1,7 +1,7 @@
 {
   "name": "minimonster",
   "description": "Nodejs minification middleware for express/connnect with in memory caching support",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": {
     "name": "Calvin Alvin",
     "email": "calvin@etwist.com",
@@ -23,8 +23,7 @@
     "node-cache": "0.4.0",
     "colors": "0.6.x"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "keywords": [
     "compressor",
     "minify",
