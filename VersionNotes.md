@@ -1,3 +1,6 @@
+### v0.1.7 | June 24, 2014
+- fix issue where minimonster dies when .js/.css file not found
+
 ### v0.1.6 | April 4, 2014
 - supress mkdir error if cache directory already exists
 
